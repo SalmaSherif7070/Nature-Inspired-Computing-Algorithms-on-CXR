@@ -168,12 +168,6 @@ Optimization focuses on:
 
 ---
 
-## References
-- Project brief and grading rubric
-- Ant Colony Optimization for feature selection (as provided in project documentation)
-
----
-
 ## Contributing
 - Add notebooks and scripts to the `src/` directory.
 - Dataset source:  
