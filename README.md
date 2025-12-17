@@ -1,4 +1,4 @@
-# Nature-Inspired Computation (NIC) — Final Project
+# Nature-Inspired Computation— Final Project
 
 ## Overview
 This project applies **Nature-Inspired Computation (NIC)** techniques to **optimize deep learning models for COVID-19 detection from chest X-ray images**.  
