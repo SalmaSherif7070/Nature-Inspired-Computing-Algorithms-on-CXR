@@ -1,10 +1,10 @@
 # Nature-Inspired Computation (NIC) — Final Project
 
 ## Overview
-This project integrates **Nature-Inspired Computation (NIC)**, **Deep Learning**, and **Explainable AI (XAI)** to develop a **fully optimized and interpretable deep learning model**.  
-Multiple **metaheuristic optimization algorithms** are applied across model training, feature selection, and explainability using a **single high-dimensional dataset** containing **at least 7,000 samples**.
+This project applies **Nature-Inspired Computation (NIC)** techniques to **optimize deep learning models for COVID-19 detection from chest X-ray images**.  
+The work integrates **Deep Learning**, **Metaheuristic Optimization**, and **Explainable AI (XAI)** to produce a **highly accurate, robust, and interpretable medical imaging model**.
 
-The final outcome is a **robust, optimized, and explainable deep model**, supported by quantitative evaluation and visual explanations.
+Two deep learning models (**DCSNN** and **SCOVNET**) are optimized using multiple metaheuristic algorithms, and their predictions are further enhanced with explainability techniques suitable for medical decision support.
 
 ---
 
@@ -14,62 +14,106 @@ The dataset used in this project is publicly available on Kaggle:
 **Kaggle Dataset:**  
 https://www.kaggle.com/datasets/salmasherif202200622/feature-selelcted-dataset
 
-The dataset is used consistently across all phases of the project to ensure fair comparison and reliable evaluation.
+### Dataset Description
+- Chest X-ray images for **three classes**:
+  - COVID-19
+  - Pneumonia
+  - Normal
+- Constructed by merging datasets from **Kaggle** and **GitHub**
+- Contains **≥ 7,000 samples**
+- Includes preprocessing and feature-selection-ready representations
+
+The same dataset is used across all phases to ensure **fair comparison and consistent evaluation**.
 
 ---
 
 ## Project Objectives
-- Apply nature-inspired metaheuristic algorithms to optimize deep learning models.
-- Perform feature selection using **Ant Colony Optimization (ACO)**.
-- Optimize metaheuristic algorithm parameters using another metaheuristic (meta-optimization).
-- Enhance and optimize **XAI methods** (SHAP, LIME, Grad-CAM).
-- Deliver a final optimized model with reliable performance and explainability.
-
----
-
-## Project Structure
-assets/
-│── Dataset and supporting assets
-
-src/
-│── Phase 1.1.ipynb
-│── Phase 1.2.ipynb
-│── Phase 2.1.ipynb
-│── Phase 2.2.ipynb
-│── Phase 2.3.ipynb
-│── Phase 2.4.ipynb
+- Build deep learning models for **COVID-19, Pneumonia, and Normal classification**.
+- Optimize model performance using **nature-inspired metaheuristic algorithms**.
+- Perform **feature selection using Ant Colony Optimization (ACO)**.
+- Apply **meta-optimization**, where one metaheuristic optimizes another.
+- Enhance model interpretability using **Explainable AI (XAI)**.
+- Deliver a **final optimized and explainable medical AI model**.
 
 
 ---
 
-## Key Requirements
-- Use **one dataset only** (image or text — no tabular data).
-- Dataset size must be **≥ 7,000 samples**.
-- Apply **7–9 unique metaheuristic algorithms** across all phases.
-- Produce:
-  - One final optimized deep learning model.
-  - Explainable AI visualizations with quality and stability analysis.
+## Models Used
+- **DCSNN** (Deep Convolutional Neural Neural Network)
+- **SCOVNET** (CNN-based architecture for COVID-19 detection)
+
+Both models are evaluated before and after optimization.
+
+---
+
+## Preprocessing and Feature Handling
+- Dataset merging and exploratory data analysis (EDA)
+- Normalization and standardization
+- Gaussian smoothing
+- Histogram equalization
+- Gamma correction
+- Oversampling to handle class imbalance
+- Removal of annotated, overexposed, and underexposed X-rays
+- Feature selection using **Ant Colony Optimization**
+
+---
+
+## Metaheuristic Algorithms Applied
+Across different stages, the following algorithms are used:
+
+- Hill Climbing
+- Tabu Search
+- Simulated Annealing
+- Ant Colony Optimization
+- Particle Swarm Optimization (PSO)
+- Gray Wolf Optimization
+
+Hybrid and meta-optimized approaches are also applied.
 
 ---
 
 ## Mandatory Steps & Deliverables
 
 ### 1. Model Parameter Optimization
-- Optimize deep learning hyperparameters using **at least 6 metaheuristic algorithms**.
-- Compare results against baseline models.
+- Optimize **DCSNN** and **SCOVNET** hyperparameters using:
+  - Hill Climbing
+  - Tabu Search
+  - Simulated Annealing
+  - Ant Colony Optimization
+  - Particle Swarm Optimization
+  - Gray Wolf Optimization
+- Compare training and validation performance.
+
+---
 
 ### 2. Feature Selection
-- Apply **Ant Colony Optimization (ACO)** to select the most informative features and reduce redundancy.
+- Apply **Ant Colony Optimization (ACO)** to:
+  - Reduce feature dimensionality
+  - Eliminate redundant features
+  - Improve generalization
+
+---
 
 ### 3. Metaheuristic Parameter Optimization
-- Select **two metaheuristic algorithms** with tunable parameters (e.g., PSO, GA).
-- Use **one metaheuristic** to optimize their internal parameters (e.g., Hill Climbing optimizing PSO parameters).
+- Select metaheuristics with tunable parameters (e.g., PSO).
+- Use another metaheuristic (e.g., Hill Climbing) to optimize:
+  - PSO parameters (C1, C2, inertia weight)
+- Evaluate the impact on convergence and accuracy.
+
+---
 
 ### 4. Explainability Optimization
-- Apply **four metaheuristic algorithms** to optimize XAI methods:
-  - SHAP
-  - LIME
-  - Grad-CAM
+Apply **four metaheuristic algorithms** to optimize XAI methods:
+
+- **Grad-CAM**
+- **LIME**
+- **SHAP**
+- **DeepLIFT / Permutation Importance**
+
+Optimization focuses on:
+- Explanation stability
+- Noise reduction
+- Clinical relevance of highlighted regions
 
 ---
 
@@ -77,23 +121,24 @@ src/
 
 ### Phase 1
 - Dataset description and justification
-- Data preprocessing and exploration
-- Baseline deep learning model
-- Comparative analysis of optimization results
+- Preprocessing and feature handling
+- Baseline DCSNN and SCOVNET models
+- Optimization stage I results
 - Short presentation
 
 ### Phase 2
-- Fully optimized model results
-- XAI visualizations and evaluation
+- Fully optimized model configurations
+- Optimization stage II and hybrid approaches
+- XAI visualizations and analysis
 - Full technical report
-- Clean GitHub repository (code + documentation)
+- Clean GitHub repository
 - Final presentation
 
 ---
 
 ## How to Run the Project
 
-1. Download the dataset from Kaggle and place it inside the `assets/` directory.
+1. Download the dataset from Kaggle and place it in the `assets/` directory.
 2. Update dataset paths in all notebooks.
 3. Create a Python environment and install dependencies:
    - TensorFlow / PyTorch
@@ -110,24 +155,25 @@ src/
 ---
 
 ## Notes & Best Practices
-- Use the **same dataset** throughout all phases.
-- Fix and report random seeds for reproducibility.
-- Record computation time for each optimization algorithm.
-- Report evaluation metrics consistently:
+- Use the **same dataset** throughout all experiments.
+- Fix random seeds for reproducibility.
+- Report computation time for each metaheuristic.
+- Evaluation metrics include:
   - Accuracy
   - Precision, Recall, F1-score
   - Loss
   - Execution time
-  - XAI stability and consistency metrics
+  - XAI stability and consistency
 
 ---
 
 ## References
-- Follow the official project brief for constraints and grading criteria.
-- Ant Colony Optimization for feature selection: refer to the provided project documentation and references.
+- Project brief and grading rubric
+- Ant Colony Optimization for feature selection (as provided in project documentation)
 
 ---
 
 ## Contributing
-- Add all notebooks and scripts to the `src/` directory.
-- Place datasets [here](https://www.kaggle.com/datasets/salmasherif202200622/feature-selelcted-dataset/)
+- Add notebooks and scripts to the `src/` directory.
+- Dataset source:  
+  https://www.kaggle.com/datasets/salmasherif202200622/feature-selelcted-dataset
