@@ -108,7 +108,8 @@ Apply **four metaheuristic algorithms** to optimize XAI methods:
 - **Grad-CAM**
 - **LIME**
 - **SHAP**
-- **DeepLIFT / Permutation Importance**
+- **DeepLIFT**
+- **Permutation Importance**
 
 Optimization focuses on:
 - Explanation stability
